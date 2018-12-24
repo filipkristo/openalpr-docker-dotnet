@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  openalprdotnetservice:
+    image: ${DOCKER_REGISTRY-}openalprdotnetservice
+    build:
+      context: .
+      dockerfile: OpenAlprDotNetService/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development      
+    ports:
+      - "8080:5000"

@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAlprDotNetService", "OpenAlprDotNetService\OpenAlprDotNetService.csproj", "{44A5BC93-10CD-4ABE-B549-F0881B34DE8E}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E13EB2C4-9450-43E1-BBE7-B3C410EA5C3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44A5BC93-10CD-4ABE-B549-F0881B34DE8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44A5BC93-10CD-4ABE-B549-F0881B34DE8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44A5BC93-10CD-4ABE-B549-F0881B34DE8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44A5BC93-10CD-4ABE-B549-F0881B34DE8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E13EB2C4-9450-43E1-BBE7-B3C410EA5C3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E13EB2C4-9450-43E1-BBE7-B3C410EA5C3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E13EB2C4-9450-43E1-BBE7-B3C410EA5C3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E13EB2C4-9450-43E1-BBE7-B3C410EA5C3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
