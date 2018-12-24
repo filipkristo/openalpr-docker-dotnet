@@ -42,7 +42,7 @@ namespace OpenAlprDotNetService.Controllers
             _logger.LogDebug($"bytes saved to {filePath}");
 
             _logger.LogInformation("Recognition start");
-            var json = ShellHelper.Bash($"alpr --config openalpr/openalpr.conf --json -c eu {filePath}");
+            var json = ShellHelper.Bash($"alpr --config openalpr/openalpr.conf --json -c eu -p hr {filePath}");
             _logger.LogInformation("Recognition ended");
 
             System.IO.File.Delete(filePath);
@@ -70,7 +70,7 @@ namespace OpenAlprDotNetService.Controllers
             _logger.LogDebug($"bytes saved to {filePath}");
 
             _logger.LogInformation("Recognition start");
-            var json = ShellHelper.Bash($"alpr --config openalpr/openalpr.conf --json -c eu {filePath}");
+            var json = ShellHelper.Bash($"alpr --config openalpr/openalpr.conf --json -c eu -p hr {filePath}");
             _logger.LogDebug($"Result: {json}");
             _logger.LogInformation("Recognition ended");
 

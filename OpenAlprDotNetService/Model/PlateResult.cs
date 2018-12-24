@@ -14,5 +14,7 @@ namespace OpenAlprDotNetService.Model
         public double ProcessingTimeMs { get; set; }
 
         public IEnumerable<PlateCoordinate> Coordinates { get; set; }
+
+        public IEnumerable<PlateCandidates> Candidates { get; set; }
     }
 }

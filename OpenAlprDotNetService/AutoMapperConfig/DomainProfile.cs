@@ -21,7 +21,8 @@ namespace OpenAlprDotNetService.AutoMapperProfile
                     {
                         X = c.X,
                         Y = c.Y
-                    })
+                    }),
+                    Candidates = r.Candidates
                 }));
         }
     }
