@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <Folder Include="Dto\" />
-    <Folder Include="AutoMapperProfile\" />
+    <Folder Include="AutoMapperConfig\" />
     <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>

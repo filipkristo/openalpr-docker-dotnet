@@ -32,26 +32,55 @@ namespace OpenAlprDotNetService.Controllers
         [HttpPost]
         public IEnumerable<RecognitionResult> Post(RecognitionModelRequest model)
         {
+            _logger.LogInformation("START => POST Recognition");
+
             var filePath = $"plate_{Guid.NewGuid()}.jpg";
             var fileBytes = Convert.FromBase64String(model.Base64String);
+            _logger.LogDebug("Converted base64 to byte array");
 
             System.IO.File.WriteAllBytes(filePath, fileBytes);
-            var json = ShellHelper.Bash($"alpr --json -c eu {filePath}");
-            System.IO.File.Delete(filePath);
+            _logger.LogDebug($"bytes saved to {filePath}");
 
-            var result = JsonConvert.DeserializeObject<OpelAlprResult>(json);
-            return _mapper.Map<IEnumerable<RecognitionResult>>(result);
+            _logger.LogInformation("Recognition start");
+            var json = ShellHelper.Bash($"alpr --json -c eu {filePath}");
+            _logger.LogInformation("Recognition ended");
+
+            System.IO.File.Delete(filePath);
+            _logger.LogDebug("Deleting temp file");
+
+            _logger.LogDebug("Starting to convert object");
+            var openAlprResult = JsonConvert.DeserializeObject<OpelAlprResult>(json);
+            var result = _mapper.Map<IEnumerable<RecognitionResult>>(openAlprResult);
+
+            _logger.LogInformation("END => POST Recognition");
+
+            return result;
         }
 
         [HttpGet]
-        public async Task<string> Get(string url)
+        public async Task<IEnumerable<RecognitionResult>> Get(string url)
         {
+            _logger.LogInformation("START => GET Recognition");
+
             var fileBytes = await _httpClient.GetByteArrayAsync(url).ConfigureAwait(false);
             var filePath = $"plate_{Guid.NewGuid()}.jpg";
+            _logger.LogInformation($"Image downloaded from url: {url}");
 
             System.IO.File.WriteAllBytes(filePath, fileBytes);
-            var result = ShellHelper.Bash($"alpr --json -c eu {filePath}");
+            _logger.LogDebug($"bytes saved to {filePath}");
+
+            _logger.LogInformation("Recognition start");
+            var json = ShellHelper.Bash($"alpr --json -c eu {filePath}");
+            _logger.LogInformation("Recognition ended");
+
             System.IO.File.Delete(filePath);
+            _logger.LogDebug("Deleting temp file");
+
+            _logger.LogDebug("Starting to convert object");
+            var openAlprResult = JsonConvert.DeserializeObject<OpelAlprResult>(json);
+            var result = _mapper.Map<IEnumerable<RecognitionResult>>(openAlprResult);
+
+            _logger.LogInformation("END => END Recognition");
 
             return result;
         }
