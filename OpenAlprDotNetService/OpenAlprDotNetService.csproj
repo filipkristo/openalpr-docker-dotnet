@@ -20,6 +20,7 @@
     <Folder Include="Dto\" />
     <Folder Include="AutoMapperConfig\" />
     <Folder Include="Model\" />
+    <Folder Include="Filters\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\RecognitionController.cs" />
