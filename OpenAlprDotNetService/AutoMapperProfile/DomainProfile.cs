@@ -1,5 +1,7 @@
 ﻿using System;
 using AutoMapper;
+using OpenAlprDotNetService.Dto;
+using OpenAlprDotNetService.Model;
 
 namespace OpenAlprDotNetService.AutoMapperProfile
 {
@@ -7,7 +9,7 @@ namespace OpenAlprDotNetService.AutoMapperProfile
     {
         public DomainProfile()
         {
-            //CreateMap<DomainUser, UserViewModel>();
+            CreateMap<OpelAlprResult, RecognitionResult>();
         }
     }
 }
