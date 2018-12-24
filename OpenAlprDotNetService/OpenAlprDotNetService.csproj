@@ -21,8 +21,101 @@
     <Folder Include="AutoMapperConfig\" />
     <Folder Include="Model\" />
     <Folder Include="Filters\" />
+    <Folder Include="openalpr\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\RecognitionController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="openalpr\openalpr.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\config\au.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\config\auwide.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\config\eu.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\config\gb.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\config\kr.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\config\kr2.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\config\mx.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\config\sg.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\config\us.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\ocr\tessdata\lau.traineddata">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\ocr\tessdata\leu.traineddata">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\ocr\tessdata\lgb.traineddata">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\ocr\tessdata\lkr.traineddata">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\ocr\tessdata\lkr2.traineddata">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\ocr\tessdata\lsg.traineddata">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\ocr\tessdata\lus.traineddata">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\postprocess\au.patterns">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\postprocess\eu.patterns">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\postprocess\gb.patterns">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\postprocess\kr.patterns">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\postprocess\mx.patterns">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\postprocess\readme.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\postprocess\sg.patterns">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\postprocess\us.patterns">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\region\au.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\region\eu.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\region\kr2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="openalpr\runtime_data\region\us.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="mask.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
