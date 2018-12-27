@@ -22,6 +22,8 @@
     <Folder Include="Model\" />
     <Folder Include="Filters\" />
     <Folder Include="openalpr\" />
+    <Folder Include="Service\" />
+    <Folder Include="Service\Interface\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\RecognitionController.cs" />

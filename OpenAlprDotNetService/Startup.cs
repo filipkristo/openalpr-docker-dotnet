@@ -13,6 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OpenAlprDotNetService.Filters;
+using OpenAlprDotNetService.Service;
+using OpenAlprDotNetService.Service.Interface;
 using Serilog;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -33,11 +35,14 @@ namespace OpenAlprDotNetService
             services.AddMvc(options => 
             {
                 options.Filters.Add(new ValidateModelAttribute());
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            })
+            .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddAutoMapper();
+            services.AddHealthChecks();
 
             services.AddSingleton<HttpClient>();
+            services.AddScoped<IRecognitionService, RecognitionService>();
 
             services.AddSwaggerGen(c =>
             {
@@ -59,6 +64,7 @@ namespace OpenAlprDotNetService
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddSerilog();
+            app.UseHealthChecks("/health");
 
             if (env.IsDevelopment())
             {

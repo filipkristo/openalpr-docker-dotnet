@@ -11,7 +11,7 @@ namespace OpenAlprDotNetService.AutoMapperProfile
     {
         public DomainProfile()
         {
-            CreateMap<OpelAlprResult, IEnumerable<RecognitionResult>>()
+            CreateMap<OpelAlprResult, List<RecognitionResult>>()
                 .ConstructUsing(m => m.Results.Select(r => new RecognitionResult
                 {
                     PlateNumber = r.Plate,
@@ -23,7 +23,8 @@ namespace OpenAlprDotNetService.AutoMapperProfile
                         Y = c.Y
                     }),
                     Candidates = r.Candidates
-                }));
+                })
+                .ToList());
         }
     }
 }
